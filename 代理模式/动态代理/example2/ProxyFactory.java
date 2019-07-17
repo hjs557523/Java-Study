@@ -21,10 +21,13 @@ public class ProxyFactory{
         return Proxy.newProxyInstance(
             target.getClass().getClassLoader(), //获得该对象的类装载器: .class文件 --> JVM上的Class对象
             target.getClass().getInterfaces(),  //获得该对象所实现的所有接口
-            new InvocationHandler(){
+            new InvocationHandler(){            //匿名类实现 InvocationHandler 接口
             
                 @Override
                 public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                    
+                    //在这里写新增的业务逻辑代码
+                    //......
 
                     System.out.println("开始事务2");
 
