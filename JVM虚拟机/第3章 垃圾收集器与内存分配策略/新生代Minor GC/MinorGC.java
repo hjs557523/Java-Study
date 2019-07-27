@@ -1,8 +1,8 @@
 /**
  * 对象优先在Eden分配
- * VM参数: -verbose:gc
- *         -Xms20M, -Xmx20M, -Xmn10M: 3个参数限制Java堆大小为20MB不可扩展，其中10MB分配给新生代，剩下10MB分配给老年代
- *         -XX: PrintGCDetails
+ * VM参数: -verbose:gc     查看Java垃圾收集结果
+ *         -Xms20M, -Xmx20M, -Xmn10M: 3个参数限制Java堆大小为20MB不可扩展(初始化堆内存为20M, 最大为20M)，其中10MB分配给新生代，剩下10MB分配给老年代
+ *         -XX: PrintGCDetails       打印GC日志信息
  *         -XX: SurvivorRatio = 8 新生代 Eden : Survivor = 8 : 1 , 即新生代可用内存为 (8+1)MB = 9216KB 
  *         
  *         GC后的最终结果： 
