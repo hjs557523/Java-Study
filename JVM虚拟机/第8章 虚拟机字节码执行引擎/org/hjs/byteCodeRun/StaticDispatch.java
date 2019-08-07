@@ -3,17 +3,9 @@
  */
 
  public class StaticDispatch {
-     static abstract class Human {         
-
-     }
-
-     static class Man extends Human {
-
-     }
-
-     static class Woman extends Human {
-
-     }
+     static abstract class Human {}
+     static class Man extends Human {}
+     static class Woman extends Human {}
 
      public void sayHello(Human guy) {
          System.out.println("hello, guy!");
