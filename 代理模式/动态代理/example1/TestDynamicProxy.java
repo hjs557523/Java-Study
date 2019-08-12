@@ -1,4 +1,4 @@
-import java.lang.reflect.InvocationHandler;
+﻿import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 import java.lang.reflect.Method;
 
@@ -42,7 +42,7 @@ class DynamicProxyHandler implements InvocationHandler {
     /**
      * 作用：通过构造函数获得参数传进来的被代理类对象
      * 
-     * @param proxied 注入被代理类对象成员，即代理类/委托类对象a
+     * @param proxied 注入被代理类对象成员，即被代理类/委托类对象a
      */
     public DynamicProxyHandler(Object proxied) {
         this.proxied = proxied;
