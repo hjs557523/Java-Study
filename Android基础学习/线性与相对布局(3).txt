@@ -1,0 +1,116 @@
+字符串资源文件的书写  
+位置：res/values-**/string.xml
+eg: res/values/string.xml
+    res/value-zh/string.xml   
+    (简体中文语言设置下时该文件定义的字符串格式资源生效)
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">相对布局</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">"Hello world!"</string>
+    <string name="url">URL:</string>
+    <string name="et_hint">提示内容</string>
+</resources>
+
+
+
+布局文件的书写
+位置：res/layout/activity_demo.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent" >
+
+
+<TextView
+   android:id="@+id/tvUrl"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_ccontent"
+   android:layout_alignParentLeft="true"  <!--与父容器左对齐-->
+   android:layout_alignBaseline="@+id/etUrl" <!--与id=etUrl基线对齐-->
+   android:text="@string/url" <!--引用字符串资源文件-->
+/>
+
+
+<EditText
+   android:id="@+id/etUrl"
+   android:layout_width="match_content"
+   android:layout_height="wrap_ccontent"
+   android:layout_toRightOf="@+id/tvUrl" <!--在id=tvUrl的控件的右边-->
+   android:layout_alignParenTop="true" <!--与父容器顶部对齐-->
+   android:hint="@string/et_hint" <!--提示信息-->
+/>
+
+<RadioGroup
+   android:id="@+id/radioGroup1"
+   android:layout_width="wrap_content"   
+   android:layout_height="wrap_content"
+   android:layout_below="@+id/etUrl"
+   android:layout_marginTop="42dp"
+   android:layout_toRightOf="@+id/tvUrl"
+
+   <!--控件所有边缘(RadioGroup)和内容(RadioButton)之间的间隔距离是30dp-->
+   android:padding="30dp"    
+    
+   <!--若分别指明-->
+    android:paddingLeft="30dp"
+   <!--控件左边缘(RadioGroup)和内容(RadioButton)之间的间隔距离是30dp-->
+    android:paddingRight="30dp"
+    android:paddingTop="30dp"
+    android:paddingBottom="30dp"
+    >
+    <RadioButton
+       android:id="@+id/radio0"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:checked="true"
+       android:text="RadioButton" />
+    
+    <RadioButton
+       android:id="@+id/radio1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:checked="true"
+       android:text="RadioButton" />
+    
+    <RadioButton
+       android:id="@+id/radio2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:checked="true"
+       android:text="RadioButton" />
+</RadioGroup>
+    
+<Button
+   android:id="@+id/button1"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:layout_centerVertical="true" <!--垂直居中为真-->
+   <!--或者-->
+   android:layout_centerInParent="true" <!--基于父容器的正中间-->
+   android:text="Button"
+   android:background="#FF0000" <!--设置背景颜色为红色-->
+   
+   <!--本控件与周围所有控件之间的间隔距离是10dp-->
+   android:layout_margin="10dp"
+   <!--若分别指明-->
+   android:layout_marginLeft="10dp"
+   android:layout_marginRight="30dp"
+   android:layout_marginTop="30dp"
+   android:layout_marginBottom="30dp"
+/>
+
+<Button
+   android:id="@+id/button2"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:layout_toRightOf="@+id/button1"<!--在button1的右边>
+   android:layout_alignTop="@+id/button1"<!--与button1顶部对齐-->
+   android:text="Button" 
+   android:background="#FF0000" <!--设置背景颜色为红色-->
+/>
+
+
+</RelativeLayout>

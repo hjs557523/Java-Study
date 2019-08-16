@@ -8,9 +8,9 @@ public class VolatileTest {
     public static void increase() {
         race++;
         //0: getstatic    取race值到操作栈顶，volatile关键字保证race的值在此时是正确的
-        //3: iconst_1     从此处开始其他线程可能已经把race的值加大了，而在操作栈顶的值就变成了过期的数据
+        //3: iconst_1     从此处开始,其他线程可能已经把race的值加大了，而在操作栈顶的值就变成了过期的数据
         //4: idd
-        //5: putstatic    可能把较小的race值同步回主内存之中
+        //5: putstatic    可能把较小的race值同步回主内存之中,即写回操作
         //8: return
     } 
 
