@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 初始化：
  * 父类的<clinit>()方法先执行，所以父类中定义的静态语句块优先于子类的静态变量赋值操作
  * 
@@ -11,7 +11,7 @@ public class TestClinit {
         public static int A = 1; //(1)
         public static final int ex = 16041321;
         static {
-            A = 2; //(3)
+            A = 2; //(2)
         }
     
     }
